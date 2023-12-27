@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0px 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+            background:  url('{{ url_for('static', filename='img.jpg') }}') center fixed no-repeat;
+        }
+
+        form {
+            text-align: center;
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9); /* Use rgba to add transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rest of your existing styles remain unchanged */
+
+        label {
+            margin-bottom: 10px;
+            display: inline-block;
+            width: 30%;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: inline-block;
+            width: 60%;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/predict" method="post">
+    
+        <label for="age">Age:</label>
+        <input type="text" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="internships">Internships:</label>
+        <input type="text" name="internships" required>
+
+        <label for="cgpa">CGPA:</label>
+        <input type="text" name="cgpa" required>
+
+        <label for="hostel">Hostel:</label>
+        <select name="hostel" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="backlogs">History of Backlogs:</label>
+        <input type="text" name="backlogs" required>
+
+        <label for="stream">Stream:</label>
+        <select name="stream" required>
+            <option value="CSE">Computer Science</option>
+            <option value="ECE">Electronics And Communication</option>
+            <option value="IT">Information Technology</option>
+            <option value="MECH">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="EC">Electrical</option>
+        </select>
+
+        <button type="submit">Predict Placement</button>
+    </form>
+</body>
+
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction Result</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: #333;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .content {
+        text-align: center;
+        color: #020202;
+        width: 80%;
+        padding: 20px; /* Add padding to create a box */
+        background-color: #ffffff; /* Add a background color for the box */
+        border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+    }
+
+    h1 {
+        color: #020202;
+    }
+
+    p {
+        margin-top: 30px;
+        font-size: 21px;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>RandomForest Prediction: {{ prediction_rf }}</h1>
+            <p>
+                {% if prediction_rf == 'Yes' %}
+                    Congratulations! You have been placed. Best of luck for your future endeavors!
+                {% else %}
+                    Don't worry if you haven't been placed this time. Use this as an opportunity to work on your skills and try again. You've got this!
+                {% endif %}
+            </p>
+        </div>
+        
+    </div>
+</body>
+
+</html>
+
